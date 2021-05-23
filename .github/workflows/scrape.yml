@@ -2,9 +2,10 @@ name: Scrape latest data
 
 on:
   push:
-   workflow_dispatch:
-   schedule:
-    - cron: 'CRON_TZ=America/Los_Angeles 15 7 * * *'
+  workflow_dispatch:
+  schedule:
+    # 2:10 am Pacific Time
+    - cron: '10 9 * * *'
 
 jobs:
   scheduled:
