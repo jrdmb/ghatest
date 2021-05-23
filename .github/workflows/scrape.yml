@@ -1,0 +1,17 @@
+name: Scrape latest data
+
+on:
+  push:
+  # workflow_dispatch:
+  # schedule:
+  #  - cron:  '36 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Fetch latest data
+      run: |-
+        curl https://www.theguardian.com/science/rss >gsci.rss
