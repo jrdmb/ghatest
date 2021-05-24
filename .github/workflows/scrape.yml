@@ -29,7 +29,9 @@ jobs:
     - name: Fetch latest data
       run: |-
         feed-to-sqlite feeds.db --table links https://www.theguardian.com/science/rss 
-        sqlite-utils --csv feeds.db "select title,link,updated from links order by updated desc;"  >gscience.csv
+        feed-to-sqlite feeds.db --table links https://feeds.bbci.co.uk/news/science_and_environment/rss.xml?edition=us
+        sqlite-utils --csv feeds.db "select title,link,published from links;"  >gscience.csv
+        # sqlite-utils --csv feeds.db "select title,link,updated from links order by updated desc;"  >gscience.csv
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
