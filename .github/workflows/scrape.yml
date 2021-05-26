@@ -49,7 +49,7 @@ jobs:
            END \
            || '-' || \
            SUBSTR(published, 6, 2) || '-' || \
-           SUBSTR(published, 18, 8) \
+           SUBSTR(published, 18, 8) as 'pubdate' \
           from links;"  >gscience.csv
     - name: Commit and push if it changed
       run: |-
