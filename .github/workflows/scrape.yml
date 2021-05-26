@@ -50,7 +50,7 @@ jobs:
            || '-' || \
            SUBSTR(published, 6, 2) || '-' || \
            SUBSTR(published, 18, 8) as 'pubdate' \
-          from links order by pubdate;"  >gscience.csv
+          from links order by pubdate desc;"  >gscience.csv
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
