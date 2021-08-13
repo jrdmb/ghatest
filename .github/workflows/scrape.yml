@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     # 2:10 am Pacific Time
-    - cron: '10 9 * * *'
+    #- cron: '10 9 * * *'
 
 jobs:
   scheduled:
